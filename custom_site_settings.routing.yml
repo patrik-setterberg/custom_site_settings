@@ -1,0 +1,7 @@
+custom_site_settings.content:
+  path: '/custom-site-settings'
+  defaults:
+    _controller: '\Drupal\custom_site_settings\Controller\SettingsController::content'
+    _title: 'Custom Site Settings'
+  requirements:
+    _permission: 'access content'

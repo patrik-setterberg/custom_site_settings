@@ -1,0 +1,6 @@
+name: Custom Site Settings
+description: Change site settings.
+package: Custom
+type: module
+version: 1.0
+core: 8.x
