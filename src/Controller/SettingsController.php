@@ -8,20 +8,30 @@
 namespace Drupal\custom_site_settings\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\block\Entity\Block;
 
 /**
  * Define SettingsController class.
  */
 class SettingsController extends ControllerBase {
-    
     /**
-     * Display markup
-     * @return markup array.
+     * Display block
+     * @return container array.
      */
     public function content() {
-        return [
-            '#type' => 'markup',
-            '#markup' => $this->t('CONTROL PANEL'),
-        ];
+
+        $block = \Drupal\block\Entity\Block::load('settings_block');
+        $block_content = \Drupal::entityManager()
+            ->getViewBuilder('block')
+            ->view($block);
+ 
+        return array(
+            '#type' => 'container',
+            '#attributes' => array(
+                'class' => array("SettingsController"),
+            ),
+            'element-content' => $block_content,
+            '#weight' => 0,
+        );
     }
 }
