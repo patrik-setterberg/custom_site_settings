@@ -4,13 +4,11 @@ namespace Drupal\custom_site_settings\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-// use Drupal\Core\Url; // check if obsolete
 
 /**
  * Settings block form
  */
 class SettingsBlockForm extends FormBase {
-    
     /**
      * {@inheritdoc}
      */
