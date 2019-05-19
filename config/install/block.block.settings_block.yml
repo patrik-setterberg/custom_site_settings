@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_site_settings
+    - system
+  theme:
+    - bartik
+id: settings_block
+theme: bartik
+weight: 0
+provider: null
+plugin: settings_block
+settings:
+  id: settings_block
+  label: 'Settings Block'
+  provider: custom_site_settings
+  label_display: '0'
+  settings_block_name: null
+visibility:
+  request_path:
+    id: request_path
+    pages: /custom-site-settings
+    negate: false
+    context_mapping: {  }
