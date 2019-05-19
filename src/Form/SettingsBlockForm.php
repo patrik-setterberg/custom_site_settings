@@ -62,8 +62,6 @@ class SettingsBlockForm extends FormBase {
 
         $config = \Drupal::service('config.factory')->getEditable('system.site');
         $config->set('name', $value);
-        $config->save();
-        
+        $config->save();   
     }
-
 }

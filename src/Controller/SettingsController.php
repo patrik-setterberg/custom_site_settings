@@ -15,11 +15,9 @@ use Drupal\block\Entity\Block;
  */
 class SettingsController extends ControllerBase {
     /**
-     * Display block
      * @return container array.
      */
     public function content() {
-
         $block = \Drupal\block\Entity\Block::load('settings_block');
         $block_content = \Drupal::entityManager()
             ->getViewBuilder('block')
