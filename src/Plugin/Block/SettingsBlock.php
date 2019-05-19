@@ -2,11 +2,9 @@
 
 namespace Drupal\custom_site_settings\Plugin\Block;
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides a Settings Block.
@@ -18,21 +16,12 @@ use Drupal\Core\Session\AccountInterface;
  * )
  */
 class SettingsBlock extends BlockBase implements BlockPluginInterface {
-
     /**
      * {@inheritdoc}
      */
     public function build() {
         // Return the form Form/SettingsBlockForm.php
         return \Drupal::FormBuilder()->getForm('Drupal\custom_site_settings\Form\SettingsBlockForm');
-    }
-
-    /**
-     * Access control
-     * {@inheritdoc}
-     */
-    protected function blockAccess(AccountInterface $account) {
-        return AccessResult::allowedIfHasPermission($account, 'change site name');
     }
 
     /**
